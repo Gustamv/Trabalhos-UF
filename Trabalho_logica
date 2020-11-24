@@ -1,0 +1,50 @@
+character(X) :- member(X,[eddard,jon,robb,bran,rickon,theon,renly,robert,joffrey,jaime,tyrion,viserys,daenerys,jorah,khal,petyr,sandor,catelyn,sansa,arya,cercei]).
+
+female(X) :- member(X,[catelyn,sansa,arya,cercei,daenerys]).
+male(X) :- character(X),not(female(X)).
+
+dead(X) :- member(X,[eddard,catelyn,khal,cercei,daenerys,petyr,jorah,joffrey,viserys,jaime,robert,renly,theon,rickon,robb]).
+alive(X) :- character(X),not(dead(X)).
+
+stark(X) :- member(X,[eddard,robb,bran,rickon,catelyn,sansa,arya]).
+lannister(X) :- member(X,[cercei,tyrion,jaime]).
+lannister(X) :- member(X,[robert,renly,joffrey]).
+targaryen(X) :- member(X, [daenerys,viserys]).
+snow(X) :- member(X, [jon]).
+clegane(X) :- member(X,[sandor]).
+mormont(X) :- member(X,[jorah]).
+greyjoy(X) :- member(X,[theon]).
+drogo(X) :- member(X,[khal]).
+baelish(X) :- member(X,[petyr]).
+
+dragon(daenerys).
+
+king(robert).
+queen(cercei).
+bastard(jon).
+
+father(eddard,robb).
+father(eddard,sansa).
+father(eddard,bran).
+father(eddard,jon).
+father(robert,joffrey).
+
+mother(catelyn,rickon).
+mother(catelyn,arya).
+mother(catelyn,robb).
+mother(catelyn,sansa).
+mother(catelyn,bran).
+mother(cercei,joffrey).
+
+
+westeros(X) :- member(X,[eddard,robb,bran,rickon,catelyn,sansa,arya,cercei,tyrion,jaime,jon,sandor,theon,petyr]).
+essos(X) :- member(X,[daenerys,viserys,khal,jorah]).
+
+winterfel(X) :- member(X,[eddard,robb,bran,rickon,catelyn,sansa,arya,jon,theon]).
+kingslanding(X) :- member(X,[cercei,tyrion,jaime,robert,petyr,sandor,joffrey]).
+vaes_dothrak(X) :- member(X,[daenerys,viserys,khal,jorah]).
+
+light_hair(X) :- member(X,[daenerys,cercei,joffrey,jaime,viserys,jorah,theon,tyrion]).
+dark_hair(X) :- member(X,[jon,bran,khal,petyr,rickon,renly,sandor,arya,robert]).
+ginger(X) :- member(X,[sansa,robb,catelyn]).
+
